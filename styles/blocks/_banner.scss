@@ -1,0 +1,48 @@
+.banner {
+    // смещение картинки по вертикали (24px)
+    --bannerImageOffsetY: 24;
+
+    padding-block: var(--bannerImageOffsetY);
+
+    @include tablet {
+        --bannerImageOffsetY: 0;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-grey);
+        border-radius: var(--border-radius-large);
+        box-shadow: var(--shadow);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        row-gap: 26px;
+        padding: 60px;
+
+        @include tablet {
+            padding: 50px;
+        }
+
+        @include mobile {
+            row-gap: 20px;
+        }
+    }
+
+    &__discription {
+        max-width: 500px;
+    }
+
+    &__image {
+        margin-block: calc(var(--bannerImageOffsetY) * -1);
+
+        @include tablet {
+            max-width: 40%;
+            height: auto;
+        }
+    }
+}
